@@ -11,12 +11,11 @@ import UIKit
 class Event {
     
     //MARK: Properties
-    
+    //Instance variables
     var name: String
     var date: String
     
     //MARK: Initialization
-    
     init?(name: String, date: String) {
         
         // Initialization should fail if the strings are empty

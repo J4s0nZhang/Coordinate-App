@@ -12,21 +12,25 @@ import os.log
 class ViewController: UIViewController {
     
     // MARK: Properties
+    //Have a connection for every outlet
     @IBOutlet weak var appName: UIView!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var selectedDate: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var event: Event?
     
+    //Called when the view is loaded, used for additional initialization
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // get the navigation bar from the current navigation controller if there is one
-        
     }
     
+    //Cancels the creation of a new event
     //MARK: Navigation
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,9 +43,17 @@ class ViewController: UIViewController {
         }
         
         let name = nameTextField.text ?? ""
-        let date = dateTextField.text ?? ""
+        let date = selectedDate.text
         
-        event = Event(name: name, date: date)
+        event = Event(name: name, date: date!)
+    }
+    
+    //Converts a date to a string and assigns it to the selectedDate label
+    //MARK: Actions
+    @IBAction func datePickerAction(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMM dd, yyyy, HH:mm"
+        selectedDate.text = dateFormatter.string(from: datePicker.date)
     }
     
 }
