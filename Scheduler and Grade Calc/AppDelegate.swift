@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Scheduler and Grade Calc
 //
-//  Created by Huanyou Wei on 2/28/18.
-//  Copyright © 2018 Huanyou Wei. All rights reserved.
+//  Created by Huanyou Wei and Jason Zhang on 2/28/18.
+//  Copyright © 2018 Huanyou Wei and Jason Zhang. All rights reserved.
 //
 
 import UIKit
