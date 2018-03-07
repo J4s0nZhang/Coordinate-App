@@ -118,21 +118,22 @@ class PlannerTableViewController: UITableViewController {
     
 
     //MARK: Private Methods
-    
+
     private func loadSampleEvents() {
-    
-        guard let event1 = Event(name: "English", date: "January 1, 2018") else {
+        //Create some sample events
+        guard let event1 = Event(name: "English", date: "Monday, Jan 01, 2018, 22:59") else {
             fatalError("Unable to instantiate event1")
         }
         
-        guard let event2 = Event(name: "Math", date: "January 1, 2018") else {
+        guard let event2 = Event(name: "Math", date: "Monday, Jan 01, 2018, 22:59") else {
             fatalError("Unable to instantiate event2")
         }
         
-        guard let event3 = Event(name: "Computer Science", date: "January 1, 2018") else {
+        guard let event3 = Event(name: "Computer Science", date: "Monday, Jan 01, 2018, 22:59") else {
             fatalError("Unable to instantiate event3")
         }
         
+        //Append them to the events array
         events += [event1, event2, event3]
         
     }
